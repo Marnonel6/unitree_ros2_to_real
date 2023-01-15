@@ -25,6 +25,10 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/unitree_legged_sdk-master/include
 )
 
+install(
+ DIRECTORY ${CMAKE_SOURCE_DIR}/unitree_legged_sdk-master/lib/
+ DESTINATION lib
+)
 
 
 link_directories(${CMAKE_SOURCE_DIR}/unitree_legged_sdk-master/lib)
@@ -47,6 +51,7 @@ install(TARGETS
     ros2_position_example
     DESTINATION lib/${PROJECT_NAME}
 )
+
 
 ament_package()
 
