@@ -41,6 +41,12 @@ add_executable(ros2_walk_example src/ros2_walk_example.cpp)
 target_link_libraries(ros2_walk_example ${EXTRA_LIBS})
 ament_target_dependencies(ros2_walk_example rclcpp ros2_unitree_legged_msgs)
 
+### Marno code START ###
+add_executable(testing_ros2_pkg src/testing_ros2_pkg.cpp)
+target_link_libraries(testing_ros2_pkg ${EXTRA_LIBS})
+ament_target_dependencies(testing_ros2_pkg rclcpp ros2_unitree_legged_msgs)
+### Marno code END ###
+
 add_executable(ros2_position_example src/ros2_position_example.cpp)
 target_link_libraries(ros2_position_example ${EXTRA_LIBS})
 ament_target_dependencies(ros2_position_example rclcpp ros2_unitree_legged_msgs)
@@ -49,6 +55,7 @@ install(TARGETS
     ros2_udp
     ros2_walk_example
     ros2_position_example
+    testing_ros2_pkg
     DESTINATION lib/${PROJECT_NAME}
 )
 
